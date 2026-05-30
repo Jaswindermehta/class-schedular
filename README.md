@@ -2,7 +2,35 @@
 
 A Java Spring Boot 3 + PostgreSQL backend engineering project for a **global live-learning class booking system**.
 
-This service coordinates academic courses, teacher scheduling, parent enrollment bookings, and timezone projections. It ensures strict data consistency under high concurrent load.
+This service coordinates academic courses, teacher scheduling, parent enrollment bookings, and timezone projections. It ensures data consistency under high concurrent load.
+
+---
+
+## Tech Stack Used
+
+- **Core Framework**: Java 21 / Spring Boot 3.3.0
+- **Database**: PostgreSQL 16
+- **Database Migration**: Flyway Migration
+- **ORM / Data Access**: Spring Data JPA / Hibernate
+- **API Documentation**: Springdoc OpenAPI 3 (Swagger UI)
+- **Local Testing**: In-Memory H2 Database (with PostgreSQL compatibility mode)
+- **Build Tool**: Maven 3.9+
+- **Boilerplate Reduction**: Project Lombok
+
+---
+
+## Environment Variables & Configuration
+
+The application uses standard Spring Boot properties that can be customized via environment variables:
+
+| Configuration Property | Environment Variable | Default Value | Description |
+|---|---|---|---|
+| `spring.datasource.url` | `SPRING_DATASOURCE_URL` | `jdbc:postgresql://localhost:5432/class_scheduler` | JDBC URL for PostgreSQL database |
+| `spring.datasource.username` | `SPRING_DATASOURCE_USERNAME` | `postgres` | Database username |
+| `spring.datasource.password` | `SPRING_DATASOURCE_PASSWORD` | `postgres` | Database password |
+| `spring.datasource.driver-class-name` | `SPRING_DATASOURCE_DRIVER` | `org.postgresql.Driver` | JDBC driver class name |
+| `spring.flyway.enabled` | `SPRING_FLYWAY_ENABLED` | `true` | Enable Flyway migrations on startup |
+| `spring.profiles.active` | `SPRING_PROFILES_ACTIVE` | *(None)* | Active profile (`test` for in-memory H2) |
 
 ---
 
